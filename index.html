@@ -10,7 +10,7 @@
             appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb"
         };
         OneSignal.push(function () {
-            OneSignal.SERVICE_WORKER_PARAM = { scope: '/push/onesignal/' };
+            //OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
             OneSignal.SERVICE_WORKER_PATH = 'push/onesignal/OneSignalSDKWorker.js'
             OneSignal.init(initConfig);
         });
