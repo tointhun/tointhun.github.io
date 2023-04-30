@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" ></script>
+        <script>
+        const OneSignal = window.OneSignal || [];
+        const initConfig = {
+            appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb"
+        };
+        OneSignal.push(function () {
+            OneSignal.SERVICE_WORKER_PARAM = { scope: '/push/onesignal/' };
+            OneSignal.SERVICE_WORKER_PATH = 'push/onesignal/OneSignalSDKWorker.js'
+            OneSignal.init(initConfig);
+        });
+        </script>
+    </head>
+    <body>
+        <div class='onesignal-customlink-container'></div>
+    </body>
+</html>
