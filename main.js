@@ -30,4 +30,4 @@ OneSignal.push(() => {
     })
 })
 
-alert(os,app,notification);
+alert(os + app + notification);
