@@ -1,0 +1,46 @@
+*{
+    margin:0;
+}
+
+.menu{
+    height:8vh;
+    height:8dvh;
+    width:8vh;
+    width:8dvh;
+    position:fixed;
+    background-color:red;
+}
+
+.head{
+    height:8vh;
+    height:8dvh;
+    width:100vw;
+    background-color:#2d2d2d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.head_logo{
+    height:6vh;
+    height:6dvh;
+}
+
+.middle{
+    height:85vh;
+    height:85dvh;
+    background-color:rgb(224, 246, 255);
+}
+
+.middle_title{
+    padding:1vh;
+    padding:1dvh;
+    font-size:2vh;
+    font-size:2dvh;
+}
+
+.bottom{
+    height:7vh;
+    height:7dvh;
+    background-color:#2d2d2d;
+}

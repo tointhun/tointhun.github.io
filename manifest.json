@@ -1,9 +1,62 @@
 {
-    "theme_color" : "#f69435",
-    "background_color" : "#f69435",
+    "theme_color" : "#2d2d2d",
+    "background_color" : "#2d2d2d",
     "display" : "fullscreen",
     "scope" : "/",
     "start_url" : "/",
-    "name" : "tointhun",
-    "short_name" : "tointhun"
+    "name" : "Toin Thun App",
+    "short_name" : "Toin Thun",
+    "icons" : [
+        {
+          "src": "src/60.png",
+          "sizes": "60x60",
+          "type": "image/png"
+        },
+        {
+          "src": "src/72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        },
+        {
+          "src": "src/80.png",
+          "sizes": "80x80",
+          "type": "image/png"
+        },
+        {
+          "src": "src/100.png",
+          "sizes": "100x100",
+          "type": "image/png"
+        },
+        {
+          "src": "src/128.png",
+          "sizes": "128x128",
+          "type": "image/png"
+        },
+        {
+          "src": "src/144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        },
+        {
+          "src": "src/152.png",
+          "sizes": "152x152",
+          "type": "image/png"
+        },
+        {
+          "src": "src/192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "src/256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+        },
+        {
+          "src": "src/512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+    ]
+
 }

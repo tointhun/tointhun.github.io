@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>Test</title>
+        <title>Toin Thun App</title>
         <meta charset="utf-8">
         <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="icon.png">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
         <script>
-          window.OneSignal = window.OneSignal || [];
-          OneSignal.push(function() {
-            OneSignal.init({
-              appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                    appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
+                });
             });
-          });
         </script>
+        <script src="main.js"></script>
     </head>
     <body>
+        <div class="menu">
+            <span class="menu_bar"></span>
+            <span class="menu_bar"></span>
+            <span class="menu_bar"></span>
+        </div>
+
         <div class='onesignal-customlink-container'></div>
+        <div class="head">
+            <img src="thun.png" class="head_logo">
+        </div>
+        <div class="middle">
+            <div class="middle_title">
+                最新記事一覧
+            </div>
+            <div class="middle_hs">
+                
+            </div>
+            <div class="middle_jhs">
+                
+            </div>
+        </div>
+        <div class="bottom">
+            
+        </div>
     </body>
 </html>
