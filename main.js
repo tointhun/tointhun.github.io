@@ -34,7 +34,7 @@ if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.na
 
 
 const show_page = (page) =>{
-    let pages = ["middle_index","middle_sub"];
+    let pages = ["middle_index","middle_sub","middle_blank","middle_iosadd"];
     for(let i = 0; i < pages.length; i++){
         if(page != pages[i]){
             document.getElementById(pages[i]).style.display = "none";
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             sub = "unsub";
         }
 
-
         //alert(os + "," + app + "," + browser + "," + sub)
 
         if(os == "ios"){
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
             }else if(app == "browser"){
                 if(browser == "safari"){
-                    //add_home.html
+                    show_page("middle_iosadd")
                 }else if(browser == "google app"){
                     //tosafari_fromgoogle.html
                 }else if(browser == "other"){
@@ -74,18 +73,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }else if(os == "android"){
             if(app == "pwa"){
                 if(sub == "sub"){
-                    //index.html
+                    show_page("middle_index");
                 }else if(sub == "unsub"){
-                    //sub.html
+                    show_page("middle_sub");
                 }
             }else if(app == "browser"){
-                //add.html
+                //android_add.html
             }
         }else{
             if(sub == "sub"){
-                //index.html
+                show_page("middle_index");
             }else if(sub == "unsub"){
-                //sub.html
+                show_page("middle_sub");
             }
         }
     });
