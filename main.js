@@ -8,6 +8,8 @@ if(window.navigator.standalone){
     app = "browser";
 }
 
+alert(ua)
+
 
 if(ua.indexOf("iPhone") > 0){
     os = "ios";
@@ -16,6 +18,8 @@ if(ua.indexOf("iPhone") > 0){
 }else if(ua.indexOf("iPod") > 0){
     os = "ios";
 }else if(ua.indexOf("Android") > 0){
+    os = "android";
+}else if(ua.indexOf("Linux") > 0){
     os = "android";
 }else{
     os = "other";
@@ -107,25 +111,21 @@ const sub_button = () => {
 }
 
 
-const add_to_home = () => {
-    let deferred_prompt;
-    alert("a");
-
-    window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferred_prompt = e;
-        
-        deferred_prompt.prompt();
-        deferred_prompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              alert('ユーザーがホーム画面に追加しました');
+function add_to_home() {
+    alert('pwaInstall Click.');
+    if (defferedPrompt) {
+        defferedPrompt.prompt();
+        defferedPrompt.userChoice.then(function(choiceResult) {
+            if (choiceResult.outcome === 'dismissed') {
+                alert('pwaInstall Click.');
             } else {
-              alert('ユーザーがホーム画面に追加しませんでした');
+                alert('Thank You!');
             }
-            deferred_prompt = null;
-        })
-    })
+        });
+        defferedPrompt = null;
+    }
 }
+
 
 
 
