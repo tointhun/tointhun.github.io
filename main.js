@@ -29,6 +29,7 @@ if(os == "ios"){
     if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
         app = 'pwa';
     }
+    alert(app);
 }else{
     app = "browser"
 }
