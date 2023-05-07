@@ -48,14 +48,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     OneSignal.getNotificationPermission().then(function(permission) {
         if(permission == "granted"){
             sub = "sub";
-            alert(sub);
         }else{
             sub = "unsub";
-            alert(sub);
         }
 
 
-        alert(os + "," + app + "," + browser + "," + sub)
+        //alert(os + "," + app + "," + browser + "," + sub)
 
         if(os == "ios"){
             if(app == "pwa"){
@@ -99,8 +97,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 const sub_button = () => {
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
-        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click()
+        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click();
+        show_page("middle_index");
     }else if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").length == 1){
-        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click()
+        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
