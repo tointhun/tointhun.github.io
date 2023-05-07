@@ -34,15 +34,17 @@ if(os == "ios"){
     app = "browser"
 }
 
-
-if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
-    browser = "safari";
-}else if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") != -1){
-    browser = "google app"
-}else{
-    browser = "other"
+alert("1")
+if(os == "ios"){
+    if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
+        browser = "safari";
+    }else if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") != -1){
+        browser = "google app"
+    }else{
+        browser = "other"
+    }
 }
-
+alert("2")
 
 
 
