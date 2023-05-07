@@ -45,13 +45,7 @@ const show_page = (page) =>{
 }
 
 window.onload = (event) => {
-    if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
-        sub = "unsub";
-    }else if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").length == 1){
-        sub = "sub";
-    }else{
-        sub = "unsub";
-    }
+    sub = "unsub"
 
     alert(os + "," + app + "," + browser + "," + sub)
 
