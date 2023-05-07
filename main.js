@@ -105,11 +105,14 @@ const sub_button = () => {
 }
 
 
-
-OneSignal.push(function() {
-    OneSignal.on('notificationPermissionChange', function(permissionChange) {
-        if (permissionChange.current === 'granted' && permissionChange.previous === 'default') {
-            alert("a");
-        }
-    });
+alert("a")
+OneSignal.on('notificationPermissionChange', function(permissionChange) {
+    var permission = permissionChange.to;
+    if (permission === 'granted') {
+        // 通知の許可が与えられた場合の処理
+        alert('通知が許可されました');
+    } else {
+        // 通知の許可が与えられなかった場合の処理
+        alert('通知が拒否されました');
+    }
 });
