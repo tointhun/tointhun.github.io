@@ -1,8 +1,6 @@
 let ua = navigator.userAgent;
 let os, app, browser, sub;
 
-alert(window.navigator.userAgent);
-
 
 if(ua.indexOf("iPhone") > 0){
     os = "ios";
@@ -26,20 +24,10 @@ if(os == "ios"){
         app = "browser";
     }
 }else if(os == "android"){
-    let displayMode = 'browser';
+    app = "browser";
     const mqStandAlone = '(display-mode: fullscreen)';
     if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
-         displayMode = 'standalone';
-    }
-
-    alert(displayMode)
-
-
-
-    if(ua.includes('wv') || ua.includes('androidwebview')){
-        app = "pwa";
-    }else{
-        app = "browser"
+        displayMode = 'pwa';
     }
 }else{
     app = "browser"
