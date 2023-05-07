@@ -111,6 +111,12 @@ const sub_button = () => {
 }
 
 
+window.addEventListener('beforeinstallprompt', function(event) {
+    event.preventDefault();
+    defferedPrompt = event;
+    return false;
+})
+
 function add_to_home() {
     alert('pwaInstall Click.');
     if (defferedPrompt) {
