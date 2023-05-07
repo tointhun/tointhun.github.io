@@ -103,3 +103,13 @@ const sub_button = () => {
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
+
+
+
+OneSignal.push(function() {
+    OneSignal.on('notificationPermissionChange', function(permissionChange) {
+        if (permissionChange.current === 'granted' && permissionChange.previous === 'default') {
+            alert("a");
+        }
+    });
+});
