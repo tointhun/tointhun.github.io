@@ -47,6 +47,7 @@ if(os == "ios"){
 
 
 
+
 const show_page = (page) =>{
     let pages = ["middle_index","middle_sub","middle_blank","middle_iosadd","middle_androidadd"];
     for(let i = 0; i < pages.length; i++){
@@ -60,6 +61,8 @@ const show_page = (page) =>{
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
+    sub = "unsub";
+
     try{
         OneSignal.getNotificationPermission().then(function(permission){
             if(permission == "granted"){
