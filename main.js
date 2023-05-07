@@ -34,7 +34,7 @@ if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.na
 
 
 const show_page = (page) =>{
-    let pages = ["middle_index","middle_sub","middle_blank","middle_iosadd"];
+    let pages = ["middle_index","middle_sub","middle_blank","middle_iosadd","middle_androidadd"];
     for(let i = 0; i < pages.length; i++){
         if(page != pages[i]){
             document.getElementById(pages[i]).style.display = "none";
@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }else{
             sub = "unsub";
         }
-
-        //alert(os + "," + app + "," + browser + "," + sub)
 
         if(os == "ios"){
             if(app == "pwa"){
@@ -78,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     show_page("middle_sub");
                 }
             }else if(app == "browser"){
-                //android_add.html
+                show_page("middle_androidadd");
             }
         }else{
             if(sub == "sub"){
@@ -102,6 +100,28 @@ const sub_button = () => {
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
+
+
+const add_to_home = () => {
+    let deferred_prompt;
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferred_prompt = e;
+        
+        deferred_prompt.prompt();
+        deferred_prompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              alert('ユーザーがホーム画面に追加しました');
+            } else {
+              alert('ユーザーがホーム画面に追加しませんでした');
+            }
+            deferred_prompt = null;
+        })
+    })
+}
+
+
 
 
 OneSignal.push(function() {

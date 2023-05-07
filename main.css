@@ -46,6 +46,10 @@
 }
 
 .iosadd{
+    display:none;
+}
+
+.androidadd{
     display:block;
 }
 
@@ -291,6 +295,46 @@
     width:90%;
     border-radius:2vh;
     border-radius:2dvh;
+}
+
+
+.androidadd_title{
+    padding-top:3vh;
+    padding-top:3dvh;
+    padding-bottom:5vh;
+    padding-bottom:5dvh;
+    font-size:3vh;
+    font-size:3dvh;
+    height:6vh;
+    height:6dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.androidadd_content{
+    height:80vh;
+    height:80dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.androidadd_content_button{
+    height:15vh;
+    height:15dvh;
+    width:80%;
+    background-color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:4vh;
+    font-size:4dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
+    border-radius:5vh;
+    border-radius:5dvh;
 }
 
 
