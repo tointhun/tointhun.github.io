@@ -26,13 +26,10 @@ if(os == "ios"){
     }
 }else if(os == "android"){
     app = "browser";
-    alert(app)
     const mqStandAlone = '(display-mode: fullscreen)';
-    alert(app)
     if (window.matchMedia(mqStandAlone).matches){
         app = 'pwa';
     }
-    alert(app)
 }else{
     app = "browser"
 }
@@ -74,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }catch(error){
         sub = "unsub";
     }
+
+    alert(os + "," + app + "," + browser + "," + sub)
 
     if(os == "ios"){
         if(app == "pwa"){
