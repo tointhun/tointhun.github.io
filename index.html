@@ -8,28 +8,10 @@
         <link rel="stylesheet" href="main.css">
         <link rel="icon" href="icon.png">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-        <script>
-            window.OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                OneSignal.init({
-                    appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
-                });
-
-                OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-                    if(isEnabled){
-                        sub = "sub";
-                        alert(sub);
-                    }else{
-                        unsub = "unsub";
-                        alert(sub);
-                    }
-                });
-            });
-        </script>
+        <script src="main.js"></script>
     </head>
     <body>
         <div class='onesignal-customlink-container' style="display:none;"></div>
-        <script src="main.js"></script>
         <div class="head">
             <img src="thun.png" class="head_logo">
         </div>

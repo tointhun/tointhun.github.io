@@ -1,6 +1,20 @@
 let ua = navigator.userAgent;
 let os, app, browser, sub;
 
+window.OneSignal = window.OneSignal || [];
+OneSignal.push(function() {
+    OneSignal.init({
+        appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
+    });
+
+    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+        if(isEnabled){
+            sub = "sub";
+        }else{
+            unsub = "unsub";
+        }
+    });
+});
 
 if(window.navigator.standalone){
     app = "pwa";
@@ -45,7 +59,7 @@ const show_page = (page) =>{
 }
 
 window.onload = (event) => {
-    alert(os + "," + app + "," + browser + "," + sub)
+    alert(os,app,browser,sub);
 
     if(os == "ios"){
         if(app == "pwa"){
