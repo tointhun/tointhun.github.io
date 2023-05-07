@@ -70,44 +70,76 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }else{
                 sub = "unsub";
             }
+
+            if(os == "ios"){
+                if(app == "pwa"){
+                    if(sub == "sub"){
+                        show_page("middle_index");
+                    }else if(sub == "unsub"){
+                        show_page("middle_sub");
+                    }
+                }else if(app == "browser"){
+                    if(browser == "safari"){
+                        show_page("middle_iosadd")
+                    }else if(browser == "google app"){
+                        //tosafari_fromgoogle.html
+                    }else if(browser == "other"){
+                        //tosafari.html
+                    }
+                }
+            }else if(os == "android"){
+                if(app == "pwa"){
+                    if(sub == "sub"){
+                        show_page("middle_index");
+                    }else if(sub == "unsub"){
+                        show_page("middle_sub");
+                    }
+                }else if(app == "browser"){
+                    show_page("middle_androidadd");
+                }
+            }else{
+                if(sub == "sub"){
+                    show_page("middle_index");
+                }else if(sub == "unsub"){
+                    show_page("middle_sub");
+                }
+            }
         })
     }catch(error){
         sub = "unsub";
-    }
 
-    alert(os + "," + app + "," + browser + "," + sub)
-
-    if(os == "ios"){
-        if(app == "pwa"){
+        if(os == "ios"){
+            if(app == "pwa"){
+                if(sub == "sub"){
+                    show_page("middle_index");
+                }else if(sub == "unsub"){
+                    show_page("middle_sub");
+                }
+            }else if(app == "browser"){
+                if(browser == "safari"){
+                    show_page("middle_iosadd")
+                }else if(browser == "google app"){
+                    //tosafari_fromgoogle.html
+                }else if(browser == "other"){
+                    //tosafari.html
+                }
+            }
+        }else if(os == "android"){
+            if(app == "pwa"){
+                if(sub == "sub"){
+                    show_page("middle_index");
+                }else if(sub == "unsub"){
+                    show_page("middle_sub");
+                }
+            }else if(app == "browser"){
+                show_page("middle_androidadd");
+            }
+        }else{
             if(sub == "sub"){
                 show_page("middle_index");
             }else if(sub == "unsub"){
                 show_page("middle_sub");
             }
-        }else if(app == "browser"){
-            if(browser == "safari"){
-                show_page("middle_iosadd")
-            }else if(browser == "google app"){
-                //tosafari_fromgoogle.html
-            }else if(browser == "other"){
-                //tosafari.html
-            }
-        }
-    }else if(os == "android"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                show_page("middle_index");
-            }else if(sub == "unsub"){
-                show_page("middle_sub");
-            }
-        }else if(app == "browser"){
-            show_page("middle_androidadd");
-        }
-    }else{
-        if(sub == "sub"){
-            show_page("middle_index");
-        }else if(sub == "unsub"){
-            show_page("middle_sub");
         }
     }
 });
