@@ -105,14 +105,9 @@ const sub_button = () => {
 }
 
 
-OneSignal.on('notificationPermissionChange', function(permissionChange) {
-    var permission = permissionChange.to;
-    if (permission === 'granted') {
-        // 通知の許可が与えられた場合の処理
-        show_page("middle_index");
-        //alert('通知が許可されました');
-    } else {
-        // 通知の許可が与えられなかった場合の処理
-        //alert('通知が拒否されました');
-    }
+OneSignal.push(function() {
+    OneSignal.on('notificationPermissionChange', function(permissionChange) {
+        var currentPermission = permissionChange.to;
+        alert('New permission state:', currentPermission);
+    });
 });
