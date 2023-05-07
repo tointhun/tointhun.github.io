@@ -3,6 +3,7 @@
     <head>
         <title>Toin Thun App</title>
         <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet"> 
         <link rel="manifest" href="manifest.json">
         <link rel="stylesheet" href="main.css">
         <link rel="icon" href="icon.png">
@@ -15,32 +16,42 @@
                 });
             });
         </script>
-        <script src="main.js"></script>
     </head>
     <body>
-        <div class="menu">
-            <span class="menu_bar"></span>
-            <span class="menu_bar"></span>
-            <span class="menu_bar"></span>
-        </div>
-
         <div class='onesignal-customlink-container'></div>
+        <script src="main.js"></script>
         <div class="head">
             <img src="thun.png" class="head_logo">
         </div>
-        <div class="middle">
-            <div class="middle_title">
-                最新記事一覧
+        <div class="middle index" id="middle_index">
+            <div class="index_title">
+                最新記事
             </div>
-            <div class="middle_hs">
-                
+            <div class="index_hs">
+                <div class="index_hs_title">
+                    桐蔭高校
+                </div>
+                <div class="index_hs_des">
+                    <div class="index_hs_des_content"></div>
+                </div>
             </div>
-            <div class="middle_jhs">
-                
+            <div class="index_jhs">
+                <div class="index_jhs_title">
+                    桐蔭中学校
+                </div>
+                <div class="index_jhs_des">
+                    <div class="index_jhs_des_content"></div>
+                </div>
             </div>
         </div>
-        <div class="bottom">
-            
+
+        <div class="middle sub" id="middle_sub">
+            <div class="sub_content">
+                <div class="sub_content_button" id="sub_button" onclick="sub_button()">
+                    通知を許可する
+                </div>
+            </div>
         </div>
+        <div class="bottom"></div>
     </body>
 </html>

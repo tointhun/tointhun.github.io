@@ -19,6 +19,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
 }
 
 .head_logo{
@@ -32,15 +33,147 @@
     background-color:rgb(224, 246, 255);
 }
 
-.middle_title{
-    padding:1vh;
-    padding:1dvh;
-    font-size:2vh;
-    font-size:2dvh;
+.index{
+    display:none;
+}
+
+.sub{
+    display:none;
+}
+
+.sub_title{
+    padding-top:3vh;
+    padding-top:3dvh;
+    padding-bottom:5vh;
+    padding-bottom:5dvh;
+    font-size:3vh;
+    font-size:3dvh;
+    height:6vh;
+    height:6dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sub_content{
+    height:80vh;
+    height:80dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sub_content_button{
+    height:15vh;
+    height:15dvh;
+    width:80%;
+    background-color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:4vh;
+    font-size:4dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
+    border-radius:5vh;
+    border-radius:5dvh;
+}
+
+
+.index_title{
+    padding-top:3vh;
+    padding-top:3dvh;
+    padding-bottom:5vh;
+    padding-bottom:5dvh;
+    font-size:3vh;
+    font-size:3dvh;
+    height:6vh;
+    height:6dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.index_hs{
+    height:25vh;
+    height:25dvh;
+}
+
+.index_hs_title{
+    height:5vh;
+    height:5dvh;
+    padding-top:1vh;
+    padding-top:1dvh;
+    padding-left:3vh;
+    padding-left:3dvh;
+    font-size:3vh;
+    font-size:3dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    display:flex;
+    align-items:center;
+}
+
+.index_hs_des{
+    height:18vh;
+    height:18dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.index_hs_des_content{
+    height:15vh;
+    height:15dvh;
+    width:85%;
+    border-radius:5vh;
+    border-radius:5dvh;
+    background-color:#ffffff;
+    filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
+}
+
+
+.index_jhs{
+    height:30vh;
+    height:30dvh;
+}
+
+.index_jhs_title{
+    height:5vh;
+    height:5dvh;
+    padding-top:1vh;
+    padding-top:1dvh;
+    padding-left:3vh;
+    padding-left:3dvh;
+    font-size:3vh;
+    font-size:3dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    display:flex;
+    align-items:center;
+}
+
+.index_jhs_des{
+    height:18vh;
+    height:18dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.index_jhs_des_content{
+    height:15vh;
+    height:15dvh;
+    width:85%;
+    border-radius:5vh;
+    border-radius:5dvh;
+    background-color:#ffffff;
+    filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
 }
 
 .bottom{
     height:7vh;
     height:7dvh;
     background-color:#2d2d2d;
+    filter: drop-shadow(-10px -10px 21px rgba(45,45,45,0.4));
 }
