@@ -1,6 +1,7 @@
 let ua = navigator.userAgent;
 let os, app, browser, sub;
 
+alert(window.navigator.userAgent);
 
 
 if(ua.indexOf("iPhone") > 0){
@@ -25,6 +26,16 @@ if(os == "ios"){
         app = "browser";
     }
 }else if(os == "android"){
+    let displayMode = 'browser';
+    const mqStandAlone = '(display-mode: fullscreen)';
+    if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
+         displayMode = 'standalone';
+    }
+
+    alert(displayMode)
+
+
+
     if(ua.includes('wv') || ua.includes('androidwebview')){
         app = "pwa";
     }else{
@@ -33,6 +44,7 @@ if(os == "ios"){
 }else{
     app = "browser"
 }
+
 
 if(os == "ios"){
     if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
@@ -56,6 +68,7 @@ const show_page = (page) =>{
         }
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
     try{
@@ -95,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }else if(app == "browser"){
             show_page("middle_androidadd");
-            alert(window.matchMedia('(display-mode: standalone)').matches);
         }
     }else{
         if(sub == "sub"){
