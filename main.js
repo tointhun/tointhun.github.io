@@ -108,6 +108,6 @@ const sub_button = () => {
 OneSignal.push(function() {
     OneSignal.on('notificationPermissionChange', function(permissionChange) {
         var currentPermission = permissionChange.to;
-        alert('New permission state:', currentPermission);
+        alert('New permission state:' + currentPermission);
     });
 });
