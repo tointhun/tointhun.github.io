@@ -26,7 +26,7 @@ if(os == "ios"){
 }else if(os == "android"){
     app = "browser";
     const mqStandAlone = '(display-mode: fullscreen)';
-    if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
+    if (window.matchMedia(mqStandAlone).matches){
         app = 'pwa';
     }
     alert(app);
