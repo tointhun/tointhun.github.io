@@ -45,49 +45,54 @@ const show_page = (page) =>{
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    OneSignal.getNotificationPermission().then(function(permission) {
-        if(permission == "granted"){
-            sub = "sub";
-        }else{
-            sub = "unsub";
-        }
+    try{
+        OneSignal.getNotificationPermission().then(function(permission){
+            if(permission == "granted"){
+                sub = "sub";
+            }else{
+                sub = "unsub";
+            }
+        })
+    }catch(error){
+        sub = "unsub";
+    }
 
-        if(os == "ios"){
-            if(app == "pwa"){
-                if(sub == "sub"){
-                    show_page("middle_index");
-                }else if(sub == "unsub"){
-                    show_page("middle_sub");
-                }
-            }else if(app == "browser"){
-                if(browser == "safari"){
-                    show_page("middle_iosadd")
-                }else if(browser == "google app"){
-                    //tosafari_fromgoogle.html
-                }else if(browser == "other"){
-                    //tosafari.html
-                }
-            }
-        }else if(os == "android"){
-            if(app == "pwa"){
-                if(sub == "sub"){
-                    show_page("middle_index");
-                }else if(sub == "unsub"){
-                    show_page("middle_sub");
-                }
-            }else if(app == "browser"){
-                show_page("middle_androidadd");
-            }
-        }else{
+    if(os == "ios"){
+        if(app == "pwa"){
             if(sub == "sub"){
                 show_page("middle_index");
             }else if(sub == "unsub"){
                 show_page("middle_sub");
             }
+        }else if(app == "browser"){
+            if(browser == "safari"){
+                show_page("middle_iosadd")
+            }else if(browser == "google app"){
+                //tosafari_fromgoogle.html
+            }else if(browser == "other"){
+                //tosafari.html
+            }
         }
-    });
+    }else if(os == "android"){
+        if(app == "pwa"){
+            if(sub == "sub"){
+                show_page("middle_index");
+            }else if(sub == "unsub"){
+                show_page("middle_sub");
+            }
+        }else if(app == "browser"){
+            show_page("middle_androidadd");
+        }
+    }else{
+        if(sub == "sub"){
+            show_page("middle_index");
+        }else if(sub == "unsub"){
+            show_page("middle_sub");
+        }
+    }
 });
 
+    
 
 
 
@@ -104,6 +109,7 @@ const sub_button = () => {
 
 const add_to_home = () => {
     let deferred_prompt;
+    alert("a");
 
     window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();

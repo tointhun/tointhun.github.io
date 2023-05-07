@@ -34,7 +34,7 @@
 }
 
 .blank{
-    display:none;
+    display:block;
 }
 
 .index{
@@ -50,7 +50,7 @@
 }
 
 .androidadd{
-    display:block;
+    display:none;
 }
 
 

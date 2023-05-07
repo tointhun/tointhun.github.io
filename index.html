@@ -9,6 +9,12 @@
         <link rel="icon" href="icon.png">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
         <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js');
+                });
+            }
+
             window.OneSignal = window.OneSignal || [];
             OneSignal.push(function() {
                 OneSignal.init({
