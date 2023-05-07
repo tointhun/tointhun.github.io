@@ -2,13 +2,6 @@ let ua = navigator.userAgent;
 let os, app, browser, sub;
 
 
-if(window.navigator.standalone){
-    app = "pwa";
-}else{
-    app = "browser";
-}
-
-alert(ua)
 
 
 if(ua.indexOf("iPhone") > 0){
@@ -23,6 +16,22 @@ if(ua.indexOf("iPhone") > 0){
     os = "android";
 }else{
     os = "other";
+}
+
+if(os == "ios"){
+    if(window.navigator.standalone){
+        app = "pwa";
+    }else{
+        app = "browser";
+    }
+}else if(os == "android"){
+    if(userAgent.includes('wv') || userAgent.includes('androidwebview')){
+        app = "pwa";
+    }else{
+        app = "browser"
+    }
+}else{
+    app = "browser"
 }
 
 
@@ -118,14 +127,11 @@ window.addEventListener('beforeinstallprompt', function(event) {
 })
 
 function add_to_home() {
-    alert('pwaInstall Click.');
     if (defferedPrompt) {
         defferedPrompt.prompt();
         defferedPrompt.userChoice.then(function(choiceResult) {
-            if (choiceResult.outcome === 'dismissed') {
-                alert('pwaInstall Click.');
-            } else {
-                alert('Thank You!');
+            if(choiceResult.outcome === 'dismissed'){
+            }else{
             }
         });
         defferedPrompt = null;
