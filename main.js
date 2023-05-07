@@ -98,21 +98,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 const sub_button = () => {
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click();
-        show_page("middle_index");
+        
     }else if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
 
 
-alert("a")
 OneSignal.on('notificationPermissionChange', function(permissionChange) {
     var permission = permissionChange.to;
     if (permission === 'granted') {
         // 通知の許可が与えられた場合の処理
-        alert('通知が許可されました');
+        show_page("middle_index");
+        //alert('通知が許可されました');
     } else {
         // 通知の許可が与えられなかった場合の処理
-        alert('通知が拒否されました');
+        //alert('通知が拒否されました');
     }
 });
