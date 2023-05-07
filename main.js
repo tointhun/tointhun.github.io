@@ -44,53 +44,51 @@ const show_page = (page) =>{
     }
 }
 
-async function checkNotificationPermission(){
-    const permission = await OneSignal.getNotificationPermission();
-    if (permission === "granted") {
-        sub = "sub";
-    } else {
-        sub = "unsub"
+document.addEventListener("DOMContentLoaded", function(event) {
+    OneSignal.getNotificationPermission().then(function(permission) {
+        if(permission == "granted"){
+            sub = "sub";
+            alert(sub);
+        }else{
+            sub = "unsub";
+            alert(sub);
+        }
+    });
+});
+
+alert(os + "," + app + "," + browser + "," + sub)
+
+if(os == "ios"){
+    if(app == "pwa"){
+        if(sub == "sub"){
+            show_page("middle_index");
+        }else if(sub == "unsub"){
+            show_page("middle_sub");
+        }
+    }else if(app == "browser"){
+        if(browser == "safari"){
+            //add_home.html
+        }else if(browser == "google app"){
+            //tosafari_fromgoogle.html
+        }else if(browser == "other"){
+            //tosafari.html
+        }
     }
-    alert(sub);
-}
-
-checkNotificationPermission();
-
-window.onload = (event) => {
-    alert(os + "," + app + "," + browser + "," + sub)
-
-    if(os == "ios"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                show_page("middle_index");
-            }else if(sub == "unsub"){
-                show_page("middle_sub");
-            }
-        }else if(app == "browser"){
-            if(browser == "safari"){
-                //add_home.html
-            }else if(browser == "google app"){
-                //tosafari_fromgoogle.html
-            }else if(browser == "other"){
-                //tosafari.html
-            }
-        }
-    }else if(os == "android"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                //index.html
-            }else if(sub == "unsub"){
-                //sub.html
-            }
-        }else if(app == "browser"){
-            //add.html
-        }
-    }else{
+}else if(os == "android"){
+    if(app == "pwa"){
         if(sub == "sub"){
             //index.html
         }else if(sub == "unsub"){
             //sub.html
         }
+    }else if(app == "browser"){
+        //add.html
+    }
+}else{
+    if(sub == "sub"){
+        //index.html
+    }else if(sub == "unsub"){
+        //sub.html
     }
 }
 
