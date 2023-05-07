@@ -1,50 +1,6 @@
 let ua = navigator.userAgent;
 let os, app, browser, sub;
 
-window.OneSignal = window.OneSignal || [];
-OneSignal.push(function() {
-    OneSignal.init({
-        appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
-    });
-
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-        if(isEnabled){
-            sub = "sub";
-        }else{
-            unsub = "unsub";
-        }
-    });
-});
-
-if(window.navigator.standalone){
-    app = "pwa";
-}else{
-    app = "browser";
-}
-
-
-if(ua.indexOf("iPhone") > 0){
-    os = "ios";
-}else if(ua.indexOf("iPad") > 0){
-    os = "ios";
-}else if(ua.indexOf("iPod") > 0){
-    os = "ios";
-}else if(ua.indexOf("Android") > 0){
-    os = "android";
-}else{
-    os = "other";
-}
-
-
-if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
-    browser = "safari";
-}else if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") != -1){
-    browser = "google app"
-}else{
-    browser = "other"
-}
-
-
 
 
 const show_page = (page) =>{
@@ -58,43 +14,92 @@ const show_page = (page) =>{
     }
 }
 
-window.onload = (event) => {
-    alert(os,app,browser,sub);
+window.OneSignal = window.OneSignal || [];
+OneSignal.push(function() {
+    OneSignal.init({
+        appId: "301acfc8-b601-457e-a6c5-a5f21d87edbb",
+    });
 
-    if(os == "ios"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                show_page("middle_index");
-            }else if(sub == "unsub"){
-                show_page("middle_sub");
-            }
-        }else if(app == "browser"){
-            if(browser == "safari"){
-                //add_home.html
-            }else if(browser == "google app"){
-                //tosafari_fromgoogle.html
-            }else if(browser == "other"){
-                //tosafari.html
+    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+        if(isEnabled){
+            sub = "sub";
+        }else{
+            unsub = "unsub";
+        }
+
+
+        if(window.navigator.standalone){
+            app = "pwa";
+        }else{
+            app = "browser";
+        }
+        
+
+        if(ua.indexOf("iPhone") > 0){
+            os = "ios";
+        }else if(ua.indexOf("iPad") > 0){
+            os = "ios";
+        }else if(ua.indexOf("iPod") > 0){
+            os = "ios";
+        }else if(ua.indexOf("Android") > 0){
+            os = "android";
+        }else{
+            os = "other";
+        }
+        
+        
+        if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
+            browser = "safari";
+        }else if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") != -1){
+            browser = "google app"
+        }else{
+            browser = "other"
+        }
+        
+
+        
+        window.onload = (event) => {
+            alert(os,app,browser,sub);
+        
+            if(os == "ios"){
+                if(app == "pwa"){
+                    if(sub == "sub"){
+                        show_page("middle_index");
+                    }else if(sub == "unsub"){
+                        show_page("middle_sub");
+                    }
+                }else if(app == "browser"){
+                    if(browser == "safari"){
+                        //add_home.html
+                    }else if(browser == "google app"){
+                        //tosafari_fromgoogle.html
+                    }else if(browser == "other"){
+                        //tosafari.html
+                    }
+                }
+            }else if(os == "android"){
+                if(app == "pwa"){
+                    if(sub == "sub"){
+                        //index.html
+                    }else if(sub == "unsub"){
+                        //sub.html
+                    }
+                }else if(app == "browser"){
+                    //add.html
+                }
+            }else{
+                if(sub == "sub"){
+                    //index.html
+                }else if(sub == "unsub"){
+                    //sub.html
+                }
             }
         }
-    }else if(os == "android"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                //index.html
-            }else if(sub == "unsub"){
-                //sub.html
-            }
-        }else if(app == "browser"){
-            //add.html
-        }
-    }else{
-        if(sub == "sub"){
-            //index.html
-        }else if(sub == "unsub"){
-            //sub.html
-        }
-    }
-}
+    });
+});
+
+
+
 
 
 
