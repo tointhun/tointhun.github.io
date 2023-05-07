@@ -94,9 +94,10 @@ window.onload = (event) => {
 
 
 const sub_button = () => {
+    console.log("a")
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
-        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").click()
+        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click()
     }else if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").length == 1){
-        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").click()
+        document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click()
     }
 }
