@@ -34,7 +34,6 @@ if(os == "ios"){
     app = "browser"
 }
 
-alert("1")
 if(os == "ios"){
     if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
         browser = "safari";
@@ -44,7 +43,6 @@ if(os == "ios"){
         browser = "other"
     }
 }
-alert("2")
 
 
 
@@ -97,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }else if(app == "browser"){
             show_page("middle_androidadd");
+            alert(window.matchMedia('(display-mode: standalone)').matches);
         }
     }else{
         if(sub == "sub"){
