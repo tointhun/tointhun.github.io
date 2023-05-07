@@ -63,6 +63,8 @@ const show_page = (page) =>{
 document.addEventListener("DOMContentLoaded", function(event) {
     sub = "unsub";
 
+    alert(os + "," + app + "," + browser + "," + sub)
+
     try{
         OneSignal.getNotificationPermission().then(function(permission){
             if(permission == "granted"){
