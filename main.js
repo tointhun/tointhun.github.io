@@ -17,7 +17,6 @@ if(ua.indexOf("iPhone") > 0){
     os = "other";
 }
 
-alert(os);
 
 if(os == "ios"){
     if(window.navigator.standalone){
@@ -27,10 +26,13 @@ if(os == "ios"){
     }
 }else if(os == "android"){
     app = "browser";
+    alert(app)
     const mqStandAlone = '(display-mode: fullscreen)';
+    alert(app)
     if (window.matchMedia(mqStandAlone).matches){
         app = 'pwa';
     }
+    alert(app)
 }else{
     app = "browser"
 }
