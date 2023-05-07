@@ -3,7 +3,6 @@ let os, app, browser, sub;
 
 
 
-
 if(ua.indexOf("iPhone") > 0){
     os = "ios";
 }else if(ua.indexOf("iPad") > 0){
@@ -18,6 +17,7 @@ if(ua.indexOf("iPhone") > 0){
     os = "other";
 }
 
+
 if(os == "ios"){
     if(window.navigator.standalone){
         app = "pwa";
@@ -25,7 +25,7 @@ if(os == "ios"){
         app = "browser";
     }
 }else if(os == "android"){
-    if(userAgent.includes('wv') || userAgent.includes('androidwebview')){
+    if(ua.includes('wv') || ua.includes('androidwebview')){
         app = "pwa";
     }else{
         app = "browser"
