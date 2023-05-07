@@ -45,8 +45,6 @@ const show_page = (page) =>{
 }
 
 window.onload = (event) => {
-    sub = "unsub"
-
     alert(os + "," + app + "," + browser + "," + sub)
 
     if(os == "ios"){
