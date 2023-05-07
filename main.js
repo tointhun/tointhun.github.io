@@ -2,6 +2,7 @@ let ua = navigator.userAgent;
 let os, app, browser, sub;
 
 
+
 if(ua.indexOf("iPhone") > 0){
     os = "ios";
 }else if(ua.indexOf("iPad") > 0){
@@ -16,6 +17,7 @@ if(ua.indexOf("iPhone") > 0){
     os = "other";
 }
 
+alert(os);
 
 if(os == "ios"){
     if(window.navigator.standalone){
@@ -29,7 +31,6 @@ if(os == "ios"){
     if (window.matchMedia(mqStandAlone).matches){
         app = 'pwa';
     }
-    alert(app);
 }else{
     app = "browser"
 }
