@@ -131,7 +131,9 @@ const sub_button = () => {
 
     if(os = "android"){
         alert("b");
-        OneSignal.showNativePrompt();
+        OneSignal.push(function() {
+            OneSignal.showNativePrompt();
+        });
     }
 
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
