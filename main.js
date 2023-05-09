@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }else if(app == "browser"){
             show_page("middle_androidadd");
+            show_page("middle_sub")
         }
     }else{
         if(sub == "sub"){
@@ -130,7 +131,6 @@ const sub_button = () => {
     alert(os)
 
     if(os = "android"){
-        alert("b");
         OneSignal.push(function() {
             OneSignal.showNativePrompt();
         });
