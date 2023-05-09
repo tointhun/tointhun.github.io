@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 const sub_button = () => {
-    alert("a");
+    alert(os)
 
     if(os = "android"){
         alert("b");
