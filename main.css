@@ -2,15 +2,6 @@
     margin:0;
 }
 
-.menu{
-    height:8vh;
-    height:8dvh;
-    width:8vh;
-    width:8dvh;
-    position:fixed;
-    background-color:red;
-}
-
 .head{
     height:8vh;
     height:8dvh;
@@ -31,6 +22,7 @@
     height:85vh;
     height:85dvh;
     background-color:rgb(224, 246, 255);
+    overflow-y:scroll;
 }
 
 .blank{
@@ -50,6 +42,14 @@
 }
 
 .androidadd{
+    display:none;
+}
+
+.tosafarifromgoogle{
+    display:none;
+}
+
+.tosafari{
     display:none;
 }
 

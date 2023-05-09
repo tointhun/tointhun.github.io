@@ -1,5 +1,6 @@
 let ua = navigator.userAgent;
 let os, app, browser, sub;
+let defferedPrompt;
 
 
 
@@ -126,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 const sub_button = () => {
+    alert("a");
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click();
         
@@ -133,6 +135,7 @@ const sub_button = () => {
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
+
 
 
 window.addEventListener('beforeinstallprompt', function(event) {
