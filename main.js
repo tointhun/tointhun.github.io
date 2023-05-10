@@ -111,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }else if(app == "browser"){
             show_page("middle_androidadd");
-            show_page("middle_sub");
         }
     }else{
         if(sub == "sub"){
