@@ -128,13 +128,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 const sub_button = () => {
-    alert(os)
-
-    if(os = "android"){
-        OneSignal.push(function() {
-            OneSignal.showNativePrompt();
-        });
-    }
 
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click();
