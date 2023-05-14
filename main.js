@@ -3,6 +3,16 @@ let os, app, browser, sub;
 let defferedPrompt;
 
 
+fetch("https://script.googleusercontent.com/macros/echo?user_content_key=9FZ0cdUJAu5yZKYvgWzCGHOE21g1f-i0Iv03wLVgLtICGLD7tKnU0ytC_Mu5sFtHJ4XbNfrzKbTSHGECkgbdmc3WPUfnOzNZm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAeCIcpSa012AyTMJ-X0Vzzc4zCpQMhb-11qGGf9lrtlPXuaG_jZQUwnsmGmat7GXWC7IGC77W2tu03GIxocmJ4NCD3Exnk0Mg&lib=MzZqeVlym1ki2NgvoPLjKQ5XvWRuAoVU2")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("hs_content").innerHTML = data.latestHS;
+    document.getElementById("jhs_content").innerHTML = data.latestJHS;
+    console.log(data.latestHS_URL);
+    console.log(data.latestJHS_URL);
+  })
+  .catch(error => console.error(error));
+
 
 if(ua.indexOf("iPhone") > 0){
     os = "ios";
@@ -28,7 +38,7 @@ if(os == "ios"){
 }else if(os == "android"){
     app = "browser";
     const mqStandAlone = '(display-mode: fullscreen)';
-    if (window.matchMedia(mqStandAlone).matches){
+    if(window.matchMedia(mqStandAlone).matches){
         app = 'pwa';
     }
 }else{
@@ -40,13 +50,11 @@ if(os == "ios"){
     if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") == -1){
         browser = "safari";
     }else if(window.navigator.userAgent.toLowerCase().indexOf("safari") != -1 && window.navigator.userAgent.indexOf("GSA") != -1){
-        browser = "google app"
+        browser = "google app";
     }else{
-        browser = "other"
+        browser = "other";
     }
 }
-
-
 
 
 const show_page = (page) =>{
@@ -96,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }else if(app == "browser"){
             if(browser == "safari"){
                 show_page("middle_iosadd")
+                show_page("middle_index");
             }else if(browser == "google app"){
                 //tosafari_fromgoogle.html
             }else if(browser == "other"){
@@ -104,9 +113,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }else if(os == "android"){
         if(app == "pwa"){
+            /*
             if(sub == "sub"){
                 show_page("middle_index");
-            }else if(sub == "unsub"){
+            }else{
+                show_page("middle_sub");
+            }
+            */
+            if(localStorage.getItem("situation") == "set_notify"){
+                show_page("middle_index");
+            }else{
                 show_page("middle_sub");
             }
         }else if(app == "browser"){
@@ -117,25 +133,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
             show_page("middle_index");
         }else if(sub == "unsub"){
             show_page("middle_sub");
+            show_page("middle_index");
         }
     }
 });
 
-    
-
-
-
 
 const sub_button = () => {
-
     if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-unsubscribed")[0].click();
-        
+        localStorage.setItem("situation","set_notify");
     }else if(document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed").length == 1){
         document.getElementsByClassName("onesignal-reset onesignal-customlink-subscribe medium button state-subscribed")[0].click();
     }
 }
-
 
 
 window.addEventListener('beforeinstallprompt', function(event) {
@@ -144,20 +155,18 @@ window.addEventListener('beforeinstallprompt', function(event) {
     return false;
 })
 
-function add_to_home() {
+
+const add_to_home = () => {
     if (defferedPrompt) {
         defferedPrompt.prompt();
         defferedPrompt.userChoice.then(function(choiceResult) {
             if(choiceResult.outcome === 'dismissed'){
             }else{
             }
+            defferedPrompt = null;
         });
-        defferedPrompt = null;
     }
 }
-
-
-
 
 
 OneSignal.push(function() {

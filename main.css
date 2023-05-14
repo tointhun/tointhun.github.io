@@ -97,13 +97,18 @@
 }
 
 .index_hs_des_content{
-    height:15vh;
-    height:15dvh;
-    width:85%;
+    height:9vh;
+    height:9dvh;
+    width:calc(85% - 6vh);
+    width:calc(85% - 6dvh);
+    padding:3vh;
     border-radius:5vh;
     border-radius:5dvh;
     background-color:#ffffff;
     filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
+    font-size:2.5vh;
+    font-size:2.5dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
 
@@ -135,13 +140,18 @@
 }
 
 .index_jhs_des_content{
-    height:15vh;
-    height:15dvh;
-    width:85%;
+    height:9vh;
+    height:9dvh;
+    width:calc(85% - 6vh);
+    width:calc(85% - 6dvh);
+    padding:3vh;
     border-radius:5vh;
     border-radius:5dvh;
     background-color:#ffffff;
     filter: drop-shadow(10px 10px 21px rgba(45,45,45,0.4));
+    font-size:2.5vh;
+    font-size:2.5dvh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
 
