@@ -69,74 +69,44 @@ const show_page = (page) =>{
 }
 
 
-/*
 document.addEventListener("DOMContentLoaded", function(event) {
-    sub = "unsub";
+    console.log(os + "," + app + "," + browser + "," + localStorage.getItem("situation"))
 
-    const permission = OneSignal.getNotificationPermission();
-    
-    if (permission === "granted") {
-      sub = "sub";
-    }
-
-    try{
-        OneSignal.getNotificationPermission().then(function(permission){
-            if(permission == "granted"){
-                sub = "sub";
+    if(os == "ios"){
+        if(app == "pwa"){
+            if(localStorage.getItem("situation") == "set_notify"){
+                show_page("middle_index");
             }else{
-                sub = "unsub";
+                show_page("middle_sub");
             }
-        })
-    }catch(error){
-        sub = "unsub";
-    }
-
-    */
-
-console.log(os + "," + app + "," + browser + "," + localStorage.getItem("situation"))
-
-if(os == "ios"){
-    if(app == "pwa"){
-        if(localStorage.getItem("situation") == "set_notify"){
-            show_page("middle_index");
-        }else{
-            show_page("middle_sub");
+        }else if(app == "browser"){
+            if(browser == "safari"){
+                show_page("middle_iosadd")
+            }else if(browser == "google app"){
+                //tosafari_fromgoogle.html
+            }else if(browser == "other"){
+                //tosafari.html
+            }
         }
-    }else if(app == "browser"){
-        if(browser == "safari"){
-            show_page("middle_iosadd")
-        }else if(browser == "google app"){
-            //tosafari_fromgoogle.html
-        }else if(browser == "other"){
-            //tosafari.html
+    }else if(os == "android"){
+        if(app == "pwa"){
+            if(localStorage.getItem("situation") == "set_notify"){
+                show_page("middle_index");
+            }else{
+                show_page("middle_sub");
+            }
+        }else if(app == "browser"){
+            show_page("middle_androidadd");
         }
-    }
-}else if(os == "android"){
-    if(app == "pwa"){
-        /*
-        if(sub == "sub"){
-            show_page("middle_index");
-        }else{
-            show_page("middle_sub");
-        }
-        */
-        if(localStorage.getItem("situation") == "set_notify"){
-            show_page("middle_index");
-        }else{
-            show_page("middle_sub");
-        }
-    }else if(app == "browser"){
-        show_page("middle_androidadd");
-    }
-}else{
-    if(localStorage.getItem("situation") == "set_notify"){
-        show_page("middle_index");
-        console.log("a")
     }else{
-        show_page("middle_sub");
+        if(localStorage.getItem("situation") == "set_notify"){
+            show_page("middle_index");
+            console.log("a")
+        }else{
+            show_page("middle_sub");
+        }
     }
-}
-//});
+});
 
 
 const sub_button = () => {
