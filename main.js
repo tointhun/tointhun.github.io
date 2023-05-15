@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     */
     if(os == "ios"){
         if(app == "pwa"){
-            if(sub == "sub"){
+            if(localStorage.getItem("situation") == "set_notify"){
                 show_page("middle_index");
             }else if(sub == "unsub"){
                 show_page("middle_sub");
