@@ -70,18 +70,36 @@ const show_page = (page) =>{
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    alert(os + "," + app + "," + browser + "," + localStorage.getItem("situation"))
-
+    sub = "unsub";
+    const permission = OneSignal.getNotificationPermission();
+    
+    if (permission === "granted") {
+      sub = "sub";
+    }
+    /*
+    try{
+        OneSignal.getNotificationPermission().then(function(permission){
+            if(permission == "granted"){
+                sub = "sub";
+            }else{
+                sub = "unsub";
+            }
+        })
+    }catch(error){
+        sub = "unsub";
+    }
+    */
     if(os == "ios"){
         if(app == "pwa"){
-            if(localStorage.getItem("situation") == "set_notify"){
+            if(sub == "sub"){
                 show_page("middle_index");
-            }else{
+            }else if(sub == "unsub"){
                 show_page("middle_sub");
             }
         }else if(app == "browser"){
             if(browser == "safari"){
                 show_page("middle_iosadd")
+                show_page("middle_index");
             }else if(browser == "google app"){
                 //tosafari_fromgoogle.html
             }else if(browser == "other"){
@@ -90,6 +108,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }else if(os == "android"){
         if(app == "pwa"){
+            /*
+            if(sub == "sub"){
+                show_page("middle_index");
+            }else{
+                show_page("middle_sub");
+            }
+            */
             if(localStorage.getItem("situation") == "set_notify"){
                 show_page("middle_index");
             }else{
@@ -99,11 +124,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             show_page("middle_androidadd");
         }
     }else{
-        if(localStorage.getItem("situation") == "set_notify"){
+        if(sub == "sub"){
             show_page("middle_index");
-            console.log("a")
-        }else{
+        }else if(sub == "unsub"){
             show_page("middle_sub");
+            show_page("middle_index");
         }
     }
 });
