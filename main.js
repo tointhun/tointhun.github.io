@@ -70,7 +70,7 @@ const show_page = (page) =>{
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    console.log(os + "," + app + "," + browser + "," + localStorage.getItem("situation"))
+    alert(os + "," + app + "," + browser + "," + localStorage.getItem("situation"))
 
     if(os == "ios"){
         if(app == "pwa"){
