@@ -132,7 +132,7 @@ if(os == "ios"){
     if(localStorage.getItem("situation") == "set_notify"){
         show_page("middle_index");
         console.log("a")
-    }else if(sub == "unsub"){
+    }else{
         show_page("middle_sub");
     }
 }
