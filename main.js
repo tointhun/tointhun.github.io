@@ -68,6 +68,7 @@ const show_page = (page) =>{
     }
 }
 
+/*
 
 document.addEventListener("DOMContentLoaded", function(event) {
     sub = "unsub";
@@ -78,64 +79,64 @@ document.addEventListener("DOMContentLoaded", function(event) {
       sub = "sub";
     }
 
-    /*
 
-    try{
-        OneSignal.getNotificationPermission().then(function(permission){
-            if(permission == "granted"){
-                sub = "sub";
-            }else{
-                sub = "unsub";
-            }
-        })
-    }catch(error){
-        sub = "unsub";
+try{
+    OneSignal.getNotificationPermission().then(function(permission){
+        if(permission == "granted"){
+            sub = "sub";
+        }else{
+            sub = "unsub";
+        }
+    })
+}catch(error){
+    sub = "unsub";
+}
+
+*/
+
+if(os == "ios"){
+    if(app == "pwa"){
+        if(localStorage.getItem("situation") == "set_notify"){
+            show_page("middle_index");
+        }else{
+            show_page("middle_sub");
+        }
+    }else if(app == "browser"){
+        if(browser == "safari"){
+            show_page("middle_iosadd")
+        }else if(browser == "google app"){
+            //tosafari_fromgoogle.html
+        }else if(browser == "other"){
+            //tosafari.html
+        }
     }
-
-    */
-
-    if(os == "ios"){
-        if(app == "pwa"){
-            if(sub == "sub"){
-                show_page("middle_index");
-            }else if(sub == "unsub"){
-                show_page("middle_sub");
-            }
-        }else if(app == "browser"){
-            if(browser == "safari"){
-                show_page("middle_iosadd")
-            }else if(browser == "google app"){
-                //tosafari_fromgoogle.html
-            }else if(browser == "other"){
-                //tosafari.html
-            }
-        }
-    }else if(os == "android"){
-        if(app == "pwa"){
-            /*
-            if(sub == "sub"){
-                show_page("middle_index");
-            }else{
-                show_page("middle_sub");
-            }
-            */
-            if(localStorage.getItem("situation") == "set_notify"){
-                show_page("middle_index");
-            }else{
-                show_page("middle_sub");
-            }
-        }else if(app == "browser"){
-            show_page("middle_androidadd");
-        }
-    }else{
+}else if(os == "android"){
+    if(app == "pwa"){
+        /*
         if(sub == "sub"){
             show_page("middle_index");
-        }else if(sub == "unsub"){
+        }else{
             show_page("middle_sub");
-            show_page("middle_index");
         }
+        */
+        if(localStorage.getItem("situation") == "set_notify"){
+            show_page("middle_index");
+        }else{
+            show_page("middle_sub");
+        }
+    }else if(app == "browser"){
+        show_page("middle_androidadd");
     }
-});
+}else{
+    if(sub == "sub"){
+        show_page("middle_index");
+    }else if(sub == "unsub"){
+        show_page("middle_sub");
+        show_page("middle_index");
+    }
+}
+
+//});
 
 
 const sub_button = () => {
