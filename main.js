@@ -68,9 +68,10 @@ const show_page = (page) =>{
     }
 }
 
-/*
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+/*
     sub = "unsub";
 
     const permission = OneSignal.getNotificationPermission();
@@ -94,49 +95,48 @@ try{
 
 */
 
-if(os == "ios"){
-    if(app == "pwa"){
-        if(localStorage.getItem("situation") == "set_notify"){
-            show_page("middle_index");
-        }else{
-            show_page("middle_sub");
+    if(os == "ios"){
+        if(app == "pwa"){
+            if(localStorage.getItem("situation") == "set_notify"){
+                show_page("middle_index");
+            }else{
+                show_page("middle_sub");
+            }
+        }else if(app == "browser"){
+            if(browser == "safari"){
+                show_page("middle_iosadd")
+            }else if(browser == "google app"){
+                //tosafari_fromgoogle.html
+            }else if(browser == "other"){
+                //tosafari.html
+            }
         }
-    }else if(app == "browser"){
-        if(browser == "safari"){
-            show_page("middle_iosadd")
-        }else if(browser == "google app"){
-            //tosafari_fromgoogle.html
-        }else if(browser == "other"){
-            //tosafari.html
+    }else if(os == "android"){
+        if(app == "pwa"){
+            /*
+            if(sub == "sub"){
+                show_page("middle_index");
+            }else{
+                show_page("middle_sub");
+            }
+            */
+            if(localStorage.getItem("situation") == "set_notify"){
+                show_page("middle_index");
+            }else{
+                show_page("middle_sub");
+            }
+        }else if(app == "browser"){
+            show_page("middle_androidadd");
         }
-    }
-}else if(os == "android"){
-    if(app == "pwa"){
-        /*
+    }else{
         if(sub == "sub"){
             show_page("middle_index");
-        }else{
+        }else if(sub == "unsub"){
             show_page("middle_sub");
-        }
-        */
-        if(localStorage.getItem("situation") == "set_notify"){
             show_page("middle_index");
-        }else{
-            show_page("middle_sub");
         }
-    }else if(app == "browser"){
-        show_page("middle_androidadd");
     }
-}else{
-    if(sub == "sub"){
-        show_page("middle_index");
-    }else if(sub == "unsub"){
-        show_page("middle_sub");
-        show_page("middle_index");
-    }
-}
-
-//});
+});
 
 
 const sub_button = () => {
