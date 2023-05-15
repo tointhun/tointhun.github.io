@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }else if(app == "browser"){
             if(browser == "safari"){
                 show_page("middle_iosadd")
-                show_page("middle_index");
             }else if(browser == "google app"){
                 //tosafari_fromgoogle.html
             }else if(browser == "other"){
