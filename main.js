@@ -3,7 +3,7 @@ let os, app, browser, sub;
 let defferedPrompt;
 
 
-fetch("https://script.googleusercontent.com/macros/echo?user_content_key=9FZ0cdUJAu5yZKYvgWzCGHOE21g1f-i0Iv03wLVgLtICGLD7tKnU0ytC_Mu5sFtHJ4XbNfrzKbTSHGECkgbdmc3WPUfnOzNZm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAeCIcpSa012AyTMJ-X0Vzzc4zCpQMhb-11qGGf9lrtlPXuaG_jZQUwnsmGmat7GXWC7IGC77W2tu03GIxocmJ4NCD3Exnk0Mg&lib=MzZqeVlym1ki2NgvoPLjKQ5XvWRuAoVU2")
+fetch("https://script.google.com/macros/s/AKfycbwUm3wW80QzcwNipPaZ_tnH9Uwep3pJXzzsnh-H1PVTphghepY1G2P4gUe1HilqRQV-/exec")
   .then(response => response.json())
   .then(data => {
     document.getElementById("hs_content").innerHTML = data.latestHS;
