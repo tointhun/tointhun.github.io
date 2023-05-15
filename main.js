@@ -8,8 +8,8 @@ fetch("https://script.google.com/macros/s/AKfycbwUm3wW80QzcwNipPaZ_tnH9Uwep3pJXz
   .then(data => {
     document.getElementById("hs_content").innerHTML = data.latestHS;
     document.getElementById("jhs_content").innerHTML = data.latestJHS;
-    console.log(data.latestHS_URL);
-    console.log(data.latestJHS_URL);
+    document.getElementById("hs_content").setAttribute('href', data.latestHS_URL);
+    document.getElementById("jhs_content").setAttribute('href', data.latestJHS_URL);
   })
   .catch(error => console.error(error));
 
