@@ -3,14 +3,18 @@ let os, app, browser, sub;
 let defferedPrompt;
 
 
-fetch("https://script.google.com/macros/s/AKfycbwUm3wW80QzcwNipPaZ_tnH9Uwep3pJXzzsnh-H1PVTphghepY1G2P4gUe1HilqRQV-/exec")
+fetch("https://script.google.com/macros/s/AKfycbzDNbDk5jNBbtb8DE5dz5OH8U9suhT2zuxU1_gIgqzhQCUKcoRdoKX8v_mhbl9B9zZC/exec")
   .then(response => response.json())
   .then(data => {
     document.getElementById("hs_content").innerHTML = data.latestHS;
     document.getElementById("jhs_content").innerHTML = data.latestJHS;
     document.getElementById("hs_content").setAttribute('href', data.latestHS_URL);
     document.getElementById("jhs_content").setAttribute('href', data.latestJHS_URL);
-  })
+
+
+
+
+})
   .catch(error => console.error(error));
 
 
